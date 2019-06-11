@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Image, Alert, Text } from 'react-native';
+import { View, StyleSheet, Image, Alert, Text, TouchableOpacity } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { signOutOnFirebaseAsync } from '../services/FirebaseApi';
 import { ActionButton, ProfileItem } from '../components/Components';
 import { StackActions, NavigationActions } from 'react-navigation';
 import { currentFirebaseUser, uploadImageOnFirebaseAsync } from '../services/FirebaseApi';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const options = {
     title: 'Choose Photo',
@@ -50,7 +49,7 @@ export default class Profile extends Component {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.itemsContainer}>
-                { uploading && <Text style={styles.progressText}>{`Uploading...`}</Text> }
+                    { uploading && <Text style={styles.progressText}>{`Uploading...`}</Text> }
                     <ProfileItem title="Email" description={email} />
                     <TouchableOpacity onPress={() => this._goToAbout()}>
                         <ProfileItem title="About" selectable />

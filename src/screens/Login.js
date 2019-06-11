@@ -97,11 +97,12 @@ container: {
 topView: {
     justifyContent: 'center', 
     alignItems: 'center', 
-    padding: 50
+    paddingHorizontal: 40,
+    paddingVertical: 20
 }, 
 img: {
-    width: 200,
-    height: 200
+    width: 150,
+    height: 150
 },
 bottomView: { 
     flexDirection: 'column', 
